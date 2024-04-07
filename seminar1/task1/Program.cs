@@ -6,9 +6,9 @@ int bNumber = Convert.ToInt32(Console.ReadLine());
 
 if (aNumber == bNumber * bNumber)
 {
-    Console.WriteLine("a = " + aNumber + ", b = " + bNumber + " => да");
+    Console.WriteLine("a = {aNumber}, b = {bNumber} => да");
 }
 else
 {
-    Console.WriteLine("a = " + aNumber + ", b = " + bNumber + " => нет");
+    Console.WriteLine($"a = {aNumber}, b = {bNumber} => нет");
 }
