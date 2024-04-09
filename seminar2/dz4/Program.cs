@@ -4,7 +4,7 @@ int number = Convert.ToInt32(Console.ReadLine());
 if (number > 0)
 {
     int c = 1;
-    while (number / c >= 1)
+    while (number / c > 0)
     {
         System.Console.Write(number / c % 10 + ", ");
         c = c * 10;
