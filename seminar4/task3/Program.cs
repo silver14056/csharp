@@ -16,17 +16,23 @@
 
 int FromArrayToNumber(int[] array)
 {
-    //int number = array[0];
-    //for (int i = 1; i < array.Length; i++)
+    // Решение с помощью цикла FOR
+    //int number = 0;
+    //for (int i = 0; i < array.Length; i++)
     //{
     //    number = number * 10 + array[i];
     //}
-    int number = 0;
-    foreach (int value in array)
-    {
-        number = number * 10 + value;
-    }
-    return number;
+
+    // Решение с помощью метода string.Concat()
+    return Convert.ToInt32(string.Concat(array));
+
+    // Решение с помощью цикла FOREACH
+    //int number = 0;
+    //foreach (int value in array)
+    //{
+    //    number = number * 10 + value;
+    //}
+    //return number;
 }
 
 int ReadInt(string msg)
