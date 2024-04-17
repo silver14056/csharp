@@ -55,11 +55,14 @@ int[] GenerateArray(int size, int minRange, int maxRange)
 
 void PrintArray(int[] arrayForPrint)
 {
-    for (int i = 0; i < arrayForPrint.Length; ++i)
-    {
-        Console.Write(arrayForPrint[i] + " ");
-    }
-    Console.WriteLine();
+    //for (int i = 0; i < arrayForPrint.Length; ++i)
+    //{
+    //    Console.Write(arrayForPrint[i] + " ");
+    //}
+    //Console.WriteLine();
+
+    System.Console.WriteLine("[" + string.Join(", ", arrayForPrint) + "]");
 }
+
 
 Main();
