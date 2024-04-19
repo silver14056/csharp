@@ -4,52 +4,44 @@
     //проверка на Q
     //первевод строки в число
     //проверка суммы на чЁтное
-    
-    
+
+
     string stopChar = "q";
     string stopMessage = "[STOP]";
-    string startMessage = "Вводите числа: ";
-
-    Console.WriteLine(startMessage);
-
-    
+    string startMessage = "Введите число";
 
     while (true)
     {
-        
-        
+        Console.WriteLine($"{startMessage} или {stopChar} для выхода: ");
+        string strNumber = Console.ReadLine();
 
         if (strNumber == stopChar)
         {
-            Console.WriteLine("[STOP]");
+            Console.WriteLine(stopMessage);
             return;
         }
 
-        int num = Convert.ToInt32(strNumber);
-        int sum = 0;
+        int number = Convert.ToInt32(strNumber);
 
+        if (sumNambers(number) % 2 == 0)
+        {
+            Console.WriteLine(stopMessage);
+            return;
+        }
+    }
+    
+
+    int sumNambers(int num)
+    {
+        int sum = 0;
         while (num != 0)
         {
             sum += num % 10;
             num /= 10;
-
-            
         }
-        Console.WriteLine(sum);
-
-        if (sum % 2 == 0)
-        {
-            Console.WriteLine("[STOP]");
-            return ;
-        }
+        return sum;
     }
 }
 
-
-
-string ReadString(string msg)
-{
-    return Console.ReadLine();
-}
 
 main();
