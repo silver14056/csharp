@@ -1,4 +1,21 @@
-﻿string str = Console.ReadLine();
+﻿//принять строку
+//выбрать цифры в новую строку
+//заполнить массив цифрами из строки
+//
+//
+//
+//
+//
+//
+
+
+
+string str = Console.ReadLine();
+string stringOfDigits = GetDigitsFromString(str);
+int lengthOfDigits = stringOfDigits.Length;
+int numbers = Convert.ToInt32(stringOfDigits);
+int[] digits = StringDigitToMass(numbers, lengthOfDigits);
+PrintArray(digits);
 
 string GetDigitsFromString(string s)
 {
@@ -11,19 +28,21 @@ string GetDigitsFromString(string s)
             stringDigits = stringDigits + e;
         }
     }
+    Console.WriteLine(stringDigits);
     return stringDigits;
 
 }
 
-int[] StringDigitToMass(string s)
+int[] StringDigitToMass(int num, int numLength)
 {
-    int[] digits = new int[s.Length];
+    int[] digits = new int[numLength];
 
-    for(int i = 0; i < s.Length; i++)
+    for(int i = 0; i < digits.Length; i++)
     {
-        digits[i] = s[i];
+        digits[i] = num % 10;
+        num = num / 10;
     }
-    return digits;
+    return FlipArray(digits);
 
 }
 
@@ -32,6 +51,14 @@ void PrintArray(int[] arrayForPrint)
     System.Console.WriteLine("[" + string.Join(", ", arrayForPrint) + "]");
 }
 
-System.Console.WriteLine(GetDigitsFromString(str));
-System.Console.WriteLine(GetDigitsFromString(str).Length);
-PrintArray(StringDigitToMass(GetDigitsFromString(str)));
+int[] FlipArray(int[] arr)
+{
+    int[] flipArr = new int[arr.Length];
+
+    for (int i = 0; i < flipArr.Length; i++)
+    {
+        flipArr[i] = arr[arr.Length - 1 - i];
+    }
+
+    return flipArr;
+}
