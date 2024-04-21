@@ -4,8 +4,7 @@
     int column = ReadInt("Введите колличество столбцов: ");
     int[,] myMatrix = GenerateMatrix(row, column, 0, 9);
     PrintMatrix(myMatrix);
-    ChangeMatrix(myMatrix);
-    PrintMatrix(myMatrix);
+    Console.WriteLine(FindSumOfDiag(myMatrix));
 }
 
 int ReadInt(string msg)
@@ -39,15 +38,15 @@ void PrintMatrix(int[,] matrix)
     Console.WriteLine();
 }
 
-void ChangeMatrix(int[,] matrix)
+int FindSumOfDiag(int[,] matrix)
 {
-    for (int i = 0; i < matrix.GetLength(0); i += 2)
+    int sum = 0;
+    
+    for (int i = 0;i < matrix.GetLength(0) && i < matrix.GetLength(1); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j += 2)
-        {
-            matrix[i, j] *= matrix[i, j];
-        }
+        sum += matrix[i, i];
     }
+    return sum;
 }
 
 Main();
