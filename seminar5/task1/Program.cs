@@ -1,7 +1,7 @@
 ﻿void Main()
 {
     int row = ReadInt("Введите колличество строк: ");
-    int column = ReadInt("Введите колличество стоьбцов: ");
+    int column = ReadInt("Введите колличество столбцов: ");
     int[,] myMatrix = GenerateMatrix(row, column, 0, 9);
     PrintMatrix(myMatrix);
     ChangeMatrix(myMatrix);
