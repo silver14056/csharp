@@ -15,7 +15,7 @@
         Console.WriteLine($"{startMessage} или {stopChar} для выхода: ");
         string strNumber = Console.ReadLine();
 
-        if (strNumber == stopChar)
+        if (strNumber.Equals(stopChar))
         {
             Console.WriteLine(stopMessage);
             return;
