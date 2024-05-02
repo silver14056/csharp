@@ -4,7 +4,7 @@
 
 void Main()
 {
-    string normalString = " one two three four five six seven eight nine ten ";
+    string normalString = " один два three four five six seven eight nine ten ";
     string reverseString = reverseWordString(normalString);
     System.Console.WriteLine();
     System.Console.WriteLine($"|{reverseString}|");
